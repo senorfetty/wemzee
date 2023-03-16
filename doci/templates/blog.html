@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title >JAVASCRIPT</title>
+        <link type="text/css" rel="stylesheet" href="{% static 'css/prac.css' %}">
+    <body onload="mess()">    
+        
+              
+        <button type="button" onclick='coll()'>CLICK</button>
+
+        <form name="frm1" onsubmit="return validateForm()" action="/home">
+            <label for ='first'> First</label>
+            <br>
+            <input type="text" onchange="upper()" name="first" id="first" >
+            <br>
+            <label for="last"> Last</label>
+            <br>
+            <input type="text" name="last" id="last">
+            <br>
+            <label for="age">Age</label>
+            <br>
+            <input type="number" name="age" id="age">
+            <br>
+            <button type="button" onclick='conf()'>SUBMIT</button>
+        </form>        
+        <button type="submit" onclick='btn()'>CLICK</button>
+        <p id="prac" onclick="bt()" style="color: red">SUBMA</p> 
+
+        <button id="s" type="button" onclick='display()'>DATE</button>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div>
+        <input type="number" id="no" min="150" max="1000" required >
+        <button onclick="func()">K</button>
+        <p id="sh"></p>
+        </div>
+        <hr><hr>
+        <hr>
+        <hr>
+        <button onclick="geo()">BOFYA</button>
+        <p id="loc"></p>
+        <p>DEADLINE IN:<output id="deadline"></output></p>
+        <br>
+        <button onclick="start()">BEGIN</button>|
+        <button onclick="stop()">END</button>
+
+        <div id="mybtn">
+        <button onclick="remove()" id="id">SUP</button>
+        <p id="show"></p>
+        </div>
+        <hr>
+        <hr>
+        <div id="sauti">
+        <button onclick="zoea()">Zoea</button>
+        </div>
+        <button onclick="clearInterval(m)">STOP</button>
+        <hr>
+        <hr>
+        <p><button onclick="myMove()">Click Here</button></p>
+        <div id="container">
+            <div id="animate">                
+            </div>
+            <div id="anime"></div>
+        </div>
+        <script>
+            function mess() {
+                alert('WELCOME NIGGA!!!!');
+            }
+        </script>
+        <script>
+            getText('https://editorial.rottentomatoes.com/guide/popular-movies/');
+            async function getText(file){
+                let x= await fetch(file);
+                let y= await x.text();
+                console.log(y);
+            }
+        </script>
+
+
+        <script type="text/javascript" src="{% static 'js/prac.js' %}"></script>
+        <script>            
+            // const y= document.forms['frm1'];
+            // let text='';
+            // for (i=0;i<y.length;i++){
+            //     text += y.elements[i].value + '';
+            // };
+            // document.getElementById('prac').innerHTML= text;
+        </script>
+    </body>    
+    
+</html>

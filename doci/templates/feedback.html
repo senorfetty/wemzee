@@ -1,0 +1,54 @@
+{% extends 'contact.html' %}
+{% load static %}
+
+{% block feedback %}
+<div class="container-fluid">
+    <div class="row py-5">
+        <div class="col-12 text-center">
+            <h1 class="display-2 text-uppercase text-white mb-md-4">Feedback</h1>
+            <a href="{% url 'home' %}" class="btn btn-primary py-md-3 px-md-5 me-3">Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block contact %}
+<div class="container-fluid p-5">
+    <div class="mb-5 text-center">
+        <h5 class="text-primary text-uppercase">Let Us Hear Your Feedback</h5>
+        <h1 class="display-3 text-uppercase mb-0">WE ARE ALL EARS</h1>
+    </div>
+    <div class="row g-0">
+        <div class="col-lg-6">
+            <div class="bg-dark p-5">
+                <form method="post" >
+                    {% csrf_token %}
+                    <h3>FEEDBACK FORM</h3>
+                    <div class="alert show">
+                        <span class="fas fa-exclamation-circle"></span>                        
+                        <span class="msg">
+                        {% for message in messages %}
+                        {{ message }}
+                        {% endfor %}
+                        </span>
+                        <span class="close-btn">
+                            <span class="fas fa-times"></span>
+                        </span>
+                    </div>                 
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <input type="email" class="form-control bg-light border-0 px-4" name="email" placeholder="Your Email" style="height: 55px;">
+                        </div>
+                        <div>
+                            <textarea class="form-control bg-light border-0 px-4 py-3" rows="4" name="message" placeholder="Message"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
