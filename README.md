@@ -1,2 +1,2 @@
 # wemzee
-Personal project for an ecommerce website
+Side project- Ecommerce website
